@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.adaptive{
+    max-width: 95%;
+    margin: 0 auto;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 40px;
+    margin: 40px;
+}
+.card{
+background-color: rgb(184, 184, 184);
+border: 1px solid black;
+padding-top: 30px;
+position: relative;
+}
+.card > .name{
+    font-size: 1.75em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 7px;
+    border-left:1px solid black;
+    border-bottom:1px solid black;
+    font-weight: bold;
+}
+.card p{
+    margin: 15px;
+    font-size: 1.25em;
+}
+
+.card:nth-child(1) .name{
+    background-color: rgb(195, 97, 97);
+}
+.card:nth-child(2) .name{
+    background-color: rgb(175, 31, 31);
+    color: white;
+}
+.card:nth-child(3) .name{
+    background-color: rgb(238, 236, 107);
+}
+
+
+@media (min-width: 992px){
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 50px;
+}
+}
+@media(max-width: 991px) and (min-width:768px){
+.cards{
+    display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 40px;
+}
+.card:nth-child(3){
+grid-column-start: 1;
+grid-column-end: 3;}
+}
+@media(max-width:767px){
+    .adaptive{
+        max-width: 80%;
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+    }
+    .card:nth-child(2){
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
